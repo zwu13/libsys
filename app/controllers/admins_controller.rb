@@ -16,6 +16,19 @@ class AdminsController < ApplicationController
     end
   end
   
+  def edit
+    @admin = Admin.find(params[:id])
+  end
+  
+  def update
+    @admin = Admin.find(params[:id])
+    if @admin.update_attributes(admin_params)
+      redirect_to @admin
+    else
+      render 'edit'
+    end
+  end
+
   private
   
     def admin_params
