@@ -1,0 +1,10 @@
+<% provide(:title, 'All admins') %>
+<h1>All users</h1>
+
+<ul class="admins">
+  <% @admins.each do |admin| %>
+    <li>
+      <%= admin.name %>, <%= admin.email %> |  <%= link_to "delete", admin, method: :delete %>
+    </li>
+  <% end %>
+</ul>
