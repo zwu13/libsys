@@ -23,10 +23,16 @@
 <% if logged_in? %>
     <li><%= link_to current_admin.name, current_admin %></li>
 <% else %>
-    <li><%= link_to "Log in", login_path %></li>
+    <li><%= link_to "Admin Log in", login_path %></li>
 <% end %>
-    
-<li><%= link_to "Log out", logout_path, method: "delete" %></li>
+<li><%= link_to "Admin Log out", logout_path, method: "delete" %></li>
+
+<% if logged_in_member? %>
+    <li><%= link_to current_member.name, current_member %></li>
+<% else %>
+    <li><%= link_to "Lib Member Log in", loginmember_path %></li>
+<% end %>
+<li><%= link_to "Lib Member Log out", logoutmember_path, method: "delete" %></li>
 </ul>
 </nav>
 </div>

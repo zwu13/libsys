@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+  
   before_action :logged_in_admin, only: [:show, :edit, :update, :destroy]
   before_action :correct_admin, only: [:show, :edit, :update]
   def show

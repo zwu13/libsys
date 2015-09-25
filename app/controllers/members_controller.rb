@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  
   def show
     @member = Member.find(params[:id])
   end
@@ -8,7 +9,7 @@ class MembersController < ApplicationController
   end
   
   def create
-    @member = Member.new(admin_params)
+    @member = Member.new(member_params)
     if @member.save
       redirect_to @member
     else

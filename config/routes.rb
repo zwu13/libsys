@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessionmembers/new'
+
   get 'members/new'
 
   get 'sessions/new'
@@ -10,9 +12,13 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'signup' => 'admins#new'
+  get 'signupmember' => 'members#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+  get 'loginmember' => 'sessionmembers#new'
+  post 'loginmember' => 'sessionmembers#create'
+  delete 'logoutmember' => 'sessionmembers#destroy'
 
   resources :admins
   resources :members
