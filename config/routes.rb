@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessionbooks/new'
+
+  get 'books/list'
+
+  get 'books/new'
+
   get 'sessionmembers/new'
 
   get 'members/new'
@@ -19,7 +25,10 @@ Rails.application.routes.draw do
   get 'loginmember' => 'sessionmembers#new'
   post 'loginmember' => 'sessionmembers#create'
   delete 'logoutmember' => 'sessionmembers#destroy'
+  get 'books' => 'books#new'
+  get 'bookslist' => 'books#index'
 
   resources :admins
   resources :members
+  resources :books
 end

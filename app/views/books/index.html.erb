@@ -1,0 +1,10 @@
+<% provide(:title, 'All books') %>
+<h1>All books</h1>
+
+<ul class="books">
+  <% @books.each do |book| %>
+    <li>
+      <%= book.isbn %>, <%= book.author %>
+    </li>
+  <% end %>
+</ul>
