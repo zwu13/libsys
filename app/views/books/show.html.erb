@@ -1,1 +1,16 @@
-<h2><%= @book.isbn %>, <%= @book.title %>, <%= @book.description %>, <%= @book.author %>, <%= @book.status %></h2>
+<table style="width:100%">
+  <tr>
+    <td>ISBN</td>
+    <td>Title</td>
+    <td>Description</td>
+    <td>Author</td>
+    <td>Status</td>
+  </tr>
+  <tr>
+    <td><%= @book.isbn %></td>  
+    <td><%= @book.title %></td>
+    <td><%= @book.description %></td>
+    <td><%= @book.author %></td>
+    <td><%= @book.status %></td>
+  </tr>
+</table>

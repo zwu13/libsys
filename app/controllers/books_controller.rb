@@ -6,16 +6,13 @@ class BooksController < ApplicationController
   def new
     @book = Book.new
   end
-
-  def list
-  end
   
   def index
     @books = Book.all
   end
   
-  def edit
-    @book = Book.find(params[:id])
+  def access
+    @book = Book.find_by(params[:id])
   end
   
   def create
@@ -25,6 +22,11 @@ class BooksController < ApplicationController
     else
       render 'new'
     end
+  end
+  
+  def destroy
+    Book.find(params[:id]).destroy
+    redirect_to bookslist_url
   end
   
   def update

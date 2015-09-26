@@ -1,10 +1,15 @@
 <% provide(:title, 'All books') %>
 <h1>All books</h1>
+ <table style="table-layout: fixed; width: auto">
 
-<ul class="books">
   <% @books.each do |book| %>
-    <li>
-      <%= book.isbn %>, <%= book.author %>
-    </li>
+  <tr>
+      <td><%=book.isbn%><td>
+      <td><%=book.title%><td>
+      <td><%=book.description%><td>
+      <td><%=book.author%><td>
+      <td><%=book.status%><td>
+  </tr>
   <% end %>
-</ul>
+
+  </table>

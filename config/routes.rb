@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   delete 'logoutmember' => 'sessionmembers#destroy'
   get 'books' => 'books#new'
   get 'bookslist' => 'books#index'
+  get 'access' => 'books#access'
 
   resources :admins
   resources :members
