@@ -23,6 +23,10 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
   
+  def index
+    @members = Member.all
+  end
+  
   def update
     @member = Member.find(params[:id])
     if @member.update_attributes(member_params)

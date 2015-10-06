@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'recbooks/new'
+
   get 'sessionbooks/new'
 
   get 'books/list'

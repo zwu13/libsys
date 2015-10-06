@@ -1,0 +1,10 @@
+<% provide(:title, 'All lib members') %>
+<h1>All lib members</h1>
+
+<ul class="members">
+  <% @members.each do |member| %>
+    <li>
+      <%= member.name %>, <%= member.email %> |  <%= link_to "delete", member, method: :delete %>
+    </li>
+  <% end %>
+</ul>
