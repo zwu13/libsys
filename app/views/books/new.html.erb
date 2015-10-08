@@ -17,7 +17,7 @@
       <%= f.text_field :author %>
 
       <%= f.label :status %>
-      <%= f.text_field :status %>
+      <%= f.select :status, [['Available','Available'],['CheckedOut','CheckedOut']] %>
       
       <%= "\n" %>
 

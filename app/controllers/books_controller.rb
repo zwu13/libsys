@@ -14,6 +14,14 @@ class BooksController < ApplicationController
     @books = Book.all
   end
   
+  def indexlib
+    @books = Book.all
+  end
+  
+  def access
+    @book = Book.find_by(params[:id])
+  end
+  
   def edit
     @book = Book.find(params[:id])
   end
@@ -48,6 +56,11 @@ class BooksController < ApplicationController
   def search
     @book = Book.new;
     #redirect_to @book
+  end
+  
+  def destroy
+    Book.find(params[:id]).destroy
+    redirect_to bookslist_url
   end
   
   private

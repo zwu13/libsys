@@ -34,6 +34,12 @@ Rails.application.routes.draw do
   get 'recbookslist' => 'recbooks#index'
   get 'approve' => 'books#addrecbook'
   get 'searchbook' => 'books#search'
+  get 'editbook' => 'books#edit'
+  get 'click' => 'sessionbooks#new'
+  post 'click' => 'sessionbooks#create'
+  delete 'clickout' => 'sessionbooks#destroy'
+  get 'bookslistlib' => 'books#indexlib'
+  get 'editbooklib' => 'books#editlib'
 
   resources :recbooks
   resources :admins

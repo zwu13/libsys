@@ -1,0 +1,13 @@
+<% provide(:title, 'All books') %>
+<h1>All Admins</h1>
+
+<ul class="books">
+  <% @books.each do |book| %>
+    <li>
+      <%=session[:book_value]=book.id%>
+      <%=link_to book.isbn, editbooklib_path(current_book) %>, 
+      <%= book.status %>
+
+    </li>
+  <% end %>
+</ul>
