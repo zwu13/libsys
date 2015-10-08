@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  include SessionbooksHelper
   def home
   end
 

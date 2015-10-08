@@ -36,8 +36,25 @@ class BooksController < ApplicationController
     end
   end
   
+  def addrecbook
+    @book = Book.new(params[:book])
+    if @book.save
+      render 'edit'
+    else
+      render 'new'
+    end
+  end
+  
+  def search
+    @book = Book.new;
+    #redirect_to @book
+  end
+  
   private
   
+    def suggested_book_params
+      params.require(:book).permit(:isbn, :title, :description, :author)
+    end
     def book_params
       params.require(:book).permit(:isbn, :title, :description, :author, :status)
     end

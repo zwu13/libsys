@@ -27,12 +27,17 @@ Rails.application.routes.draw do
   get 'loginmember' => 'sessionmembers#new'
   post 'loginmember' => 'sessionmembers#create'
   delete 'logoutmember' => 'sessionmembers#destroy'
+  get 'memberslist' => 'members#index'
   get 'books' => 'books#new'
   get 'bookslist' => 'books#index'
   get 'recbooks' => 'recbooks#new'
+  get 'recbookslist' => 'recbooks#index'
+  get 'approve' => 'books#addrecbook'
+  get 'searchbook' => 'books#search'
 
+  resources :recbooks
   resources :admins
   resources :members
   resources :books
-  resources :recbooks
+
 end

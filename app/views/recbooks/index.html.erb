@@ -1,0 +1,11 @@
+<% provide(:title, 'All suggested books') %>
+<h1>All suggested books</h1>
+
+<ul class="recbooks">
+  <% @recbooks.each do |recbook| %>
+    <li>
+      <%= recbook.title %>, <%= recbook.author %>, <%= recbook.isbn %>, <%= recbook.description %> |  <%= link_to "approve", approve_path, :isbn => recbook.isbn, :title => recbook.title, :author => recbook.author, :description => recbook.description %> | 
+      <%= link_to "decline", recbook, method: :delete %>
+    </li>
+  <% end %>
+</ul>

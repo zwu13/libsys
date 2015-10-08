@@ -12,6 +12,10 @@ class SessionbooksController < ApplicationController
     end
   end
   
+  def search
+    @book = Book.search
+  end
+  
   def destroy
   
   end

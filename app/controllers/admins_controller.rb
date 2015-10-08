@@ -25,10 +25,14 @@ class AdminsController < ApplicationController
   
   def update
     @admin = Admin.find(params[:id])
-    if @admin.update_attributes(admin_params)
-      redirect_to @admin
+    if params[:id].to_i == 1
+        render 'edit'
     else
-      render 'edit'
+      if @admin.update_attributes(admin_params)
+        redirect_to @admin
+      else
+        render 'edit'
+      end
     end
   end
   

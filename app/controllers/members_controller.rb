@@ -36,6 +36,11 @@ class MembersController < ApplicationController
     end
   end
   
+  def destroy
+    Member.find(params[:id]).destroy
+    redirect_to memberslist_url
+  end
+  
   def member_params
       params.require(:member).permit(:name, :email, :password, :password_confirmation)
   end
